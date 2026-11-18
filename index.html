@@ -1,0 +1,443 @@
+حقوق جعفر محمد 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>اختبار شامل - أسئلة المتسعات</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 20px 15px;
+            line-height: 1.8;
+        }
+
+        .container { max-width: 600px; margin: 0 auto; }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #cbd5e1;
+        }
+        .header h1 { color: #1e3a8a; font-size: 1.5rem; font-weight: 900; }
+        .header p { color: #64748b; font-size: 0.9rem; font-weight: 700; }
+
+        .section-divider {
+            text-align: center;
+            margin: 30px 0 20px;
+            padding: 8px;
+            background: #e2e8f0;
+            color: #1e3a8a;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 1.05rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .q-title {
+            font-weight: 900;
+            color: #2563eb;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .q-text {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .circuit-diagram {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .btn-show {
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-family: 'Cairo';
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .btn-show:active { background: #172554; transform: scale(0.98); }
+
+        .answer {
+            display: none;
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .answer-title { color: #047857; font-weight: 900; margin-bottom: 8px; font-size: 1.05rem; }
+        
+        .step { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px dashed #a7f3d0; }
+        .step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        /* ألوان مساعدة */
+        .highlight { color: #dc2626; font-weight: 900; }
+        .math { direction: ltr; text-align: left; font-family: monospace; font-size: 1.05rem; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; display: inline-block; margin: 2px 0;}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>أسئلة الفصل الأول (المتسعات)</h1>
+            <p>المجموعة الشاملة - اختبر نفسك ثم اضغط إظهار الحل</p>
+        </div>
+
+        <div class="section-divider">المجموعة الأولى</div>
+
+        <!-- السؤال الأول -->
+        <div class="card">
+            <div class="q-title">س1: متسعتان توالي وعازل</div>
+            <div class="q-text">
+                متسعتان من ذوات الصفيحتين المتوازيتين (C₁ = 9μF , C₂ = 18μF) مربوطتان على التوالي، وربطت المجموعة إلى مصدر فرق جهده (24V). إذا أدخلت مادة عازلة بين صفيحتي المتسعة الأولى وما زالت المجموعة متصلة بالبطارية، فكانت الشحنة الكلية للمجموعة <span class="highlight">(288μC)</span>. احسب:
+                <br>1- مقدار ثابت العزل (k).
+                <br>2- فرق الجهد بين صفيحتي كل متسعة بعد إدخال العازل.
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a1', this)">إظهار الحل</button>
+            <div class="answer" id="a1">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- إيجاد السعة المكافئة بعد إدخال العازل:</b><br> المجموعة متصلة بالبطارية، إذن الجهد ثابت (V = 24V).<br> <span class="math">Ceq_new = Q_total / V = 288 / 24 = 12 μF</span></div>
+                <div class="step"><b>2- إيجاد سعة المتسعة الأولى الجديدة (C1'):</b><br> بما أنهما على التوالي: <span class="math">1/Ceq_new = 1/C1' + 1/C2</span><br> <span class="math">1/12 = 1/C1' + 1/18</span><br> <span class="math">1/C1' = 1/12 - 1/18 = (3-2)/36 = 1/36</span> → <span class="math">C1' = 36 μF</span></div>
+                <div class="step"><b>3- حساب ثابت العزل (k):</b><br> <span class="math">k = C1' / C1 = 36 / 9 = 4</span></div>
+                <div class="step"><b>4- حساب فرق الجهد لكل متسعة:</b><br> في التوالي الشحنة متساوية وتساوي الشحنة الكلية (288μC):<br> <span class="math">V1 = Q / C1' = 288 / 36 = 8V</span><br> <span class="math">V2 = Q / C2 = 288 / 18 = 16V</span></div>
+            </div>
+        </div>
+
+        <!-- السؤال الثاني -->
+        <div class="card">
+            <div class="q-title">س2: متسعتان مفصولتان وعازل</div>
+            <div class="q-text">
+                متسعتان (C₁ = 120μC , C₂ = 30μC) *ملاحظة: في الكتاب مكتوبة μC خطأ مطبعي، والمقصود μF* مربوطتان على التوالي وربطت المجموعة بين قطبي بطارية فرق الجهد (20V). إذا فصلت المجموعة عن البطارية وأدخل لوح عازل ثابت عزله (2) بين صفيحتي المتسعة الثانية، احسب مقدار فرق الجهد والطاقة لكل متسعة بعد إدخال العازل.
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a2', this)">إظهار الحل</button>
+            <div class="answer" id="a2">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- السعة المكافئة والشحنة قبل الفصل:</b><br> <span class="math">1/Ceq = 1/120 + 1/30 = 1/24</span> → <span class="math">Ceq = 24 μF</span><br> <span class="math">Q = Ceq × V = 24 × 20 = 480 μC</span> (هذه الشحنة ستبقى ثابتة بعد الفصل).</div>
+                <div class="step"><b>2- بعد إدخال العازل (k=2) للمتسعة الثانية:</b><br> <span class="math">C2' = k × C2 = 2 × 30 = 60 μF</span><br> C1 تبقى كما هي (120μF).<br> السعة المكافئة الجديدة: <span class="math">1/Ceq' = 1/120 + 1/60 = 3/120 = 1/40</span> → <span class="math">Ceq' = 40 μF</span></div>
+                <div class="step"><b>3- فرق الجهد الكلي الجديد:</b><br> <span class="math">V_total' = Q / Ceq' = 480 / 40 = 12V</span></div>
+                <div class="step"><b>4- فرق الجهد والطاقة لكل متسعة:</b><br> <span class="math">V1 = Q / C1 = 480 / 120 = 4V</span><br> <span class="math">V2 = Q / C2' = 480 / 60 = 8V</span><br> <b>الطاقة (PE = ½ Q V):</b><br> <span class="math">PE1 = ½ × 480×10⁻⁶ × 4 = 960×10⁻⁶ J</span><br> <span class="math">PE2 = ½ × 480×10⁻⁶ × 8 = 1920×10⁻⁶ J</span></div>
+            </div>
+        </div>
+
+        <!-- السؤال الثالث -->
+        <div class="card">
+            <div class="q-title">س3: تعاليل وأسباب</div>
+            <div class="q-text">
+                1- الطاقة المختزنة في المجال الكهربائي بين صفيحتي متسعة ذات سعة ثابتة عند مضاعفة فرق الجهد بين صفيحتي المتسعة تكون (PE₂ = 4PE₁) وضحى ذلك.<br>
+                2- أذكري السبب لكل من: أ- تعد المتسعة كمفتاح مفتوح في دوائر التيار المستمر. ب- نادراً ما يستخدم موصل منفرد في تخزين الشحنات.<br>
+                3- ما هي المتسعة الإلكتروليتية ومم تتألف؟
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a3', this)">إظهار الحل</button>
+            <div class="answer" id="a3">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- إثبات PE₂ = 4PE₁:</b><br> قانون الطاقة: <span class="math">PE = ½ C V²</span>.<br> عند مضاعفة الجهد (V₂ = 2V):<br> <span class="math">PE₂ = ½ C (2V)² = ½ C (4V²) = 4 (½ C V²) = 4 PE₁</span>.</div>
+                <div class="step"><b>2- الأسباب:</b><br> <b>أ-</b> لأن المتسعة بعد اكتمال شحنها تصبح عازلة ولا تسمح بمرور التيار المستمر (التردد صفر).<br> <b>ب-</b> لأن الموصل المنفرد عند إضافة شحنات له يزداد جهده، وقد يصل إلى حدوث تفريغ كهربائي في الهواء المحيط.</div>
+                <div class="step"><b>3- المتسعة الإلكتروليتية:</b><br> تتألف من صفيحتين إحداهما من الألمنيوم والأخرى عجينة إلكتروليتية، ويتولد العازل نتيجة التفاعل الكيميائي بين الألمنيوم والإلكتروليت. تتماز بأنها تتحمل فروق جهد عالية وتوضع علامة على طرفيها للدلالة على قطبيتها.</div>
+            </div>
+        </div>
+
+        <!-- السؤال الرابع -->
+        <div class="card">
+            <div class="q-title">س4: ماذا يحصل ولماذا</div>
+            <div class="q-text">
+                متسعة ذات الصفيحتين المتوازيتين ربطت الى مصدر فرق جهده ثم فصلت عنه، فإذا ابعدت الصفيحتان عن بعضهما ضعف ما كانت عليه، ماذا يحصل لكل من (ولماذا):<br>
+                1- المجال الكهربائي.<br>
+                2- الشحنة.
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a4', this)">إظهار الحل</button>
+            <div class="answer" id="a4">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- المجال الكهربائي (E):</b> يبقى ثابتاً.<br> <b>السبب:</b> لأن المتسعة مفصولة عن المصدر، فالشحنة ثابتة. وقانون المجال بين الصفيحتين هو <span class="math">E = σ / ε₀</span> (حيث σ كثافة الشحنة السطحية = Q/A). وبما أن Q و A ثابتتان، فالمجال يبقى ثابتاً بغض النظر عن المسافة.</div>
+                <div class="step"><b>2- الشحنة (Q):</b> تبقى ثابتة.<br> <b>السبب:</b> لأن المتسعة فصلت عن البطارية (المصدر)، ولا يوجد مسار لتسريب الشحنات أو إضافة شحنات جديدة.</div>
+            </div>
+        </div>
+
+        <!-- السؤال الخامس -->
+        <div class="card">
+            <div class="q-title">س5: وضح / كيف يتم</div>
+            <div class="q-text">
+                1- كتابة الحرف المراد كتابته في آلة الحاسوب؟<br>
+                2- منع المتسعة من الانهيار؟
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a5', this)">إظهار الحل</button>
+            <div class="answer" id="a5">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- كتابة الحرف في الحاسوب:</b><br> تحت كل حرف في لوحة المفاتيح توجد متسعة. عند الضغط على المفتاح يقل البعد بين صفيحتي المتسعة فتزداد سعتها، وهذا التغير في السعة يجعل الدوائر الإلكترونية تتعرف على المفتاح الذي تم ضغطه.</div>
+                <div class="step"><b>2- منع المتسعة من الانهيار (التلف):</b><br> يتم منعها عن طريق اختيار مادة عازلة تمتلك (قوة عزل كهربائي) عالية، أي تتحمل أقصى مقدار للمجال الكهربائي قبل حدوث شرارة الانهيار، لضمان عدم تلف المتسعة عند زيادة فرق الجهد.</div>
+            </div>
+        </div>
+
+        <div class="section-divider">المجموعة الثانية (نموذج B)</div>
+
+        <!-- السؤال السادس -->
+        <div class="card">
+            <div class="q-title">س6: ربط مختلط للمتسعات</div>
+            <div class="q-text">
+                في الشكل المجاور (خمس متسعات مربوطة ربطاً مختلطاً):
+                <br>• الفرع العلوي: متسعتان على التوالي (<span class="highlight">24μF</span> و <span class="highlight">3μF</span>).
+                <br>• الفرع الأوسط: متسعة واحدة (<span class="highlight">8μF</span>) توازي مع الفرع العلوي.
+                <br>• الفرع السفلي: متسعتان على التوالي (<span class="highlight">12μF</span> و <span class="highlight">6μF</span>) توازي مع البقية.
+                <br>1- احسب مقدار السعة المكافئة للمجموعة؟
+                <br>2- إذا كانت الشحنة الكلية المختزنة في المجموعة <span class="highlight">(300μC)</span> جد مقدار فرق الجهد المستمر بين النقطتين (a, b)؟
+                <br>3- ما مقدار الشحنة المختزنة في كل متسعة؟
+            </div>
+            
+            <!-- رسم توضيحي للدائرة -->
+            <div class="circuit-diagram">
+                <svg width="260" height="150" viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg" style="direction: ltr;">
+                    <circle cx="130" cy="15" r="4" fill="#dc2626"/>
+                    <text x="115" y="18" font-size="14" font-weight="bold" fill="#dc2626">a</text>
+                    <line x1="130" y1="0" x2="130" y2="30" stroke="#1e293b" stroke-width="2"/>
+                    
+                    <line x1="40" y1="30" x2="90" y2="30" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="90" y1="20" x2="90" y2="40" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="98" y1="20" x2="98" y2="40" stroke="#1e293b" stroke-width="2"/>
+                    <text x="75" y="15" font-size="12" font-weight="bold">24μF</text>
+                    
+                    <line x1="98" y1="30" x2="162" y2="30" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="162" y1="20" x2="162" y2="40" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="170" y1="20" x2="170" y2="40" stroke="#1e293b" stroke-width="2"/>
+                    <text x="155" y="15" font-size="12" font-weight="bold">3μF</text>
+                    <line x1="170" y1="30" x2="220" y2="30" stroke="#1e293b" stroke-width="2"/>
+
+                    <line x1="40" y1="30" x2="40" y2="70" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="220" y1="30" x2="220" y2="70" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="40" y1="70" x2="126" y2="70" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="126" y1="60" x2="126" y2="80" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="134" y1="60" x2="134" y2="80" stroke="#1e293b" stroke-width="2"/>
+                    <text x="120" y="56" font-size="12" font-weight="bold">8μF</text>
+                    <line x1="134" y1="70" x2="220" y2="70" stroke="#1e293b" stroke-width="2"/>
+
+                    <line x1="40" y1="70" x2="80" y2="100" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="75" y1="106" x2="87" y2="94" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="81" y1="112" x2="93" y2="100" stroke="#1e293b" stroke-width="2"/>
+                    <text x="55" y="115" font-size="12" font-weight="bold">12μF</text>
+                    <line x1="87" y1="106" x2="130" y2="135" stroke="#1e293b" stroke-width="2"/>
+
+                    <line x1="220" y1="70" x2="180" y2="100" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="173" y1="94" x2="185" y2="106" stroke="#1e293b" stroke-width="2"/>
+                    <line x1="167" y1="100" x2="179" y2="112" stroke="#1e293b" stroke-width="2"/>
+                    <text x="190" y="115" font-size="12" font-weight="bold">6μF</text>
+                    <line x1="173" y1="106" x2="130" y2="135" stroke="#1e293b" stroke-width="2"/>
+
+                    <circle cx="130" cy="135" r="4" fill="#dc2626"/>
+                    <text x="115" y="142" font-size="14" font-weight="bold" fill="#dc2626">b</text>
+                    <line x1="130" y1="135" x2="130" y2="150" stroke="#1e293b" stroke-width="2"/>
+                </svg>
+            </div>
+
+            <button class="btn-show" onclick="toggleAnswer('a6', this)">إظهار الحل</button>
+            <div class="answer" id="a6">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- حساب السعة المكافئة (Ceq):</b><br>
+                    • الفرع العلوي توالي (24μF و 3μF):<br>
+                    <span class="math">1/C' = 1/24 + 1/3 = (1+8)/24 = 9/24 = 3/8</span> → <span class="math">C' = 8/3 μF</span><br>
+                    • الفرع السفلي توالي (12μF و 6μF):<br>
+                    <span class="math">1/C'' = 1/12 + 1/6 = 3/12 = 1/4</span> → <span class="math">C'' = 4 μF</span><br>
+                    • الفروع الثلاثة مربوطة على التوازي (C' مع 8μF مع C''):<br>
+                    <span class="math">Ceq = 8/3 + 8 + 4 = 12 + 8/3 = 44/3 ≈ 14.67 μF</span>
+                </div>
+                <div class="step"><b>2- فرق الجهد بين (a, b):</b><br>
+                    <span class="math">Vab = Q_total / Ceq = 300 / (44/3) = 900 / 44 ≈ 20.45 V</span>
+                </div>
+                <div class="step"><b>3- الشحنة المختزنة في كل متسعة:</b><br>
+                    بما أن الفروع على التوازي، ففرق الجهد متساوٍ لكل فرع (<span class="math">V = Vab ≈ 20.45 V</span>):<br>
+                    • شحنة الفرع العلوي (توالي، الشحنة متساوية لمتسعتي 24 و 3):<br>
+                    <span class="math">Q_top = C' × Vab = (8/3) × (900/44) = 600/11 ≈ 54.55 μC</span><br>
+                    • شحنة المتسعة الوسطى (8μF):<br>
+                    <span class="math">Q_mid = 8 × (900/44) = 1800/11 ≈ 163.64 μC</span><br>
+                    • شحنة الفرع السفلي (توالي، الشحنة متساوية لمتسعتي 12 و 6):<br>
+                    <span class="math">Q_bot = C'' × Vab = 4 × (900/44) = 900/11 ≈ 81.82 μC</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- السؤال السابع -->
+        <div class="card">
+            <div class="q-title">س7: اشتقاق وتعاليل وفوائد (س2 / A)</div>
+            <div class="q-text">
+                1- اشتق علاقة لحساب السعة المكافئة لمجموعة من المتسعات المتماثلة والموصولة على التوازي؟<br>
+                2- متسعة مشحونة، فرق الجهد بين صفيحتيها عالٍ جداً (وهي مفصولة عن مصدر الفولطية). تكون مثل هذه المتسعة ولمدة زمنية طويلة خطرة عند لمس صفيحتيها باليد مباشرة، ما تفسيرك لذلك؟<br>
+                3- اذكر فائدتين عمليتين تتحققان من إدخال مادة عازلة كهربائياً تملأ الحيز بين صفيحتي متسعة ذات الصفيحتين المتوازيتين بدلاً من الهواء؟
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a7', this)">إظهار الحل</button>
+            <div class="answer" id="a7">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- الاشتقاق:</b><br>
+                    في ربط التوازي تكون الشحنة الكلية تساوي مجموع شحنات المتسعات:<br>
+                    <span class="math">Q_total = Q₁ + Q₂ + Q₃ + ... + Qn</span><br>
+                    وبما أن <span class="math">Q = C × V</span> وفرق الجهد متساوٍ (<span class="math">V_total = V₁ = V₂ = V</span>):<br>
+                    <span class="math">Ceq × V = C₁V + C₂V + ... + CnV</span><br>
+                    بقسمة الطرفين على (V): <span class="math">Ceq = C₁ + C₂ + ... + Cn</span><br>
+                    وبما أن المتسعات متماثلة (<span class="math">C₁ = C₂ = ... = C</span>) وعددها (n):<br>
+                    <span class="math">Ceq = n × C</span>
+                </div>
+                <div class="step"><b>2- التفسير:</b><br>
+                    لأن مقدار الشحنة المختزنة في أي من صفيحتيها كبير جداً (بسبب كبر فرق الجهد)، وعند لمس صفيحتيها باليد مباشرة تتفرغ شحنتها بسرعة خلال جسم الإنسان مسببة صعقة كهربائية خطرة.
+                </div>
+                <div class="step"><b>3- الفائدتان العمليتان:</b><br>
+                    <b>أ-</b> زيادة سعة المتسعة بنسبة ثابت العزل (<span class="math">Ck = k × C</span>).<br>
+                    <b>ب-</b> منع الانهيار الكهربائي المبكر للعازل بين صفيحتيها عند تسليط فرق جهد كبير بينهما.
+                </div>
+            </div>
+        </div>
+
+        <!-- السؤال الثامن -->
+        <div class="card">
+            <div class="q-title">س8: نشاط عملي (س2 / B)</div>
+            <div class="q-text">
+                وضح بنشاط تأثير إدخال العازل الكهربائي بين صفيحتي متسعة مشحونة ومفصولة عن البطارية في مقدار فرق الجهد الكهربائي بينهما؟ وما تأثيره في سعة المتسعة؟
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a8', this)">إظهار الحل</button>
+            <div class="answer" id="a8">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>أدوات النشاط:</b><br>
+                    متسعة ذات الصفيحتين المتوازيتين (العازل بينهما هواء)، بطارية فولطيتها مناسبة، جهاز فولطميتر، أسلاك توصيل، لوح من مادة عازلة كهربائياً ثابت عزلها (k).
+                </div>
+                <div class="step"><b>خطوات النشاط:</b><br>
+                    1- نربط أحد قطبي البطارية بإحدى الصفيحتين والقطب الآخر بالصفيحة الثانية فتنشحن المتسعة بشحنة معينة.<br>
+                    2- نفصل البطارية عن الصفيحتين.<br>
+                    3- نربط الطرف الموجب للفولطميتر بالصفيحة الموجبة والطرف السالب بالصفيحة السالبة، نلاحظ انحراف مؤشر الفولطميتر عند قراءة معينة (V).<br>
+                    4- ندخل اللوح العازل بين صفيحتي المتسعة المشحونة والمفصولة، نلاحظ حصول نقصان في قراءة الفولطميتر (<span class="math">Vk = V / k</span>).
+                </div>
+                <div class="step"><b>الاستنتاج والتأثير في السعة:</b><br>
+                    إدخال مادة عازلة كهربائياً بين صفيحتي متسعة مشحونة ومفصولة يتسبب في إنقاص فرق الجهد الكهربائي بينهما بنسبة ثابت العزل (k)، ونتيجة لنقصان فرق الجهد وبثبوت الشحنة (Q) تزداد سعة المتسعة طبقاً للعلاقة (<span class="math">C = Q / V</span>) فتصبح (<span class="math">Ck = k × C</span>).
+                </div>
+            </div>
+        </div>
+
+        <!-- السؤال التاسع -->
+        <div class="card">
+            <div class="q-title">س9: متسعتان توازي وعازل (س3)</div>
+            <div class="q-text">
+                متسعتان (<span class="highlight">C₁ = 6μF , C₂ = 12μF</span>) مربوطتان مع بعضهما على التوازي، فإذا شحنت مجموعتهما بشحنة كلية مقدارها <span class="highlight">(180μC)</span> بوساطة مصدر للفولطية المستمرة، فإذا فصلت المجموعة عن البطارية وأدخل لوح من مادة عازلة كهربائياً ثابت عزلها <span class="highlight">(4)</span> بين صفيحتي المتسعة الأولى، جد مقدار الشحنة المختزنة في أي من صفيحتي كل متسعة وفرق جهد كل متسعة قبل وبعد إدخال العازل؟
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a9', this)">إظهار الحل</button>
+            <div class="answer" id="a9">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>أولاً: قبل إدخال العازل:</b><br>
+                    • السعة المكافئة (توازي): <span class="math">Ceq = C₁ + C₂ = 6 + 12 = 18 μF</span><br>
+                    • فرق الجهد الكلي (وهو نفسه لكل متسعة):<br>
+                    <span class="math">V_total = V₁ = V₂ = Q_total / Ceq = 180 / 18 = 10 V</span><br>
+                    • شحنة كل متسعة قبل العازل:<br>
+                    <span class="math">Q₁ = C₁ × V₁ = 6 × 10 = 60 μC</span><br>
+                    <span class="math">Q₂ = C₂ × V₂ = 12 × 10 = 120 μC</span>
+                </div>
+                <div class="step"><b>ثانياً: بعد إدخال العازل (k=4) في المتسعة الأولى (والمجموعة مفصولة):</b><br>
+                    • بما أن المجموعة مفصولة فالشحنة الكلية تبقى ثابتة (<span class="math">Q_total = 180 μC</span>).<br>
+                    • سعة المتسعة الأولى بعد العازل: <span class="math">C₁' = k × C₁ = 4 × 6 = 24 μF</span><br>
+                    • السعة المكافئة الجديدة: <span class="math">Ceq' = C₁' + C₂ = 24 + 12 = 36 μF</span><br>
+                    • فرق الجهد الجديد (متساوٍ للجميع توازي):<br>
+                    <span class="math">V_total' = V₁' = V₂' = Q_total / Ceq' = 180 / 36 = 5 V</span><br>
+                    • شحنة كل متسعة بعد العازل:<br>
+                    <span class="math">Q₁' = C₁' × V₁' = 24 × 5 = 120 μC</span><br>
+                    <span class="math">Q₂' = C₂ × V₂' = 12 × 5 = 60 μC</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- السؤال العاشر -->
+        <div class="card">
+            <div class="q-title">س10: كلاميات وعوازل (س4 / A)</div>
+            <div class="q-text">
+                1- مم تتألف المتسعة متغيرة السعة ذات الصفائح الدوارة؟ وأين تستعمل؟<br>
+                2- في أي نوع من العوازل الكهربائية تظهر شحنات سطحية على وجهيها؟ ذاكراً العلاقة الرياضية للمجال الكهربائي المتولد من هذه الشحنات؟<br>
+                3- ما المقصود بقوة العزل الكهربائي؟ وما وحدة قياسها؟
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a10', this)">إظهار الحل</button>
+            <div class="answer" id="a10">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- المتسعة متغيرة السعة ذات الصفائح الدوارة:</b><br>
+                    <b>مكوناتها:</b> تتألف من مجموعتين من الصفائح بشكل أنصاف أقراص؛ إحدى المجموعتين ثابتة والأخرى يمكنها الدوران حول محور ثابت، تربط المجموعتان بين قطبي بطارية عند شحنها، ويفصل بين كل صفيحة وأخرى الهواء كعازل كهربائي.<br>
+                    <b>استعمالها:</b> تستعمل في دائرة التنغيم في اللاسلكي والمذياع.
+                </div>
+                <div class="step"><b>2- العوازل التي تظهر عليها شحنات سطحية:</b><br>
+                    تظهر في <b>العوازل غير القطبية</b> (مثل الزجاج والبولي إثيلين).<br>
+                    <b>العلاقة الرياضية للمجال المتولد داخل العازل (Ed):</b><br>
+                    <span class="math">Ek = E - Ed</span> (حيث يتولد مجال كهربائي داخل العازل <span class="math">Ed</span> يعاكس بالاتجاه المجال الكهربائي المؤثر <span class="math">E</span> ويقلله).
+                </div>
+                <div class="step"><b>3- قوة العزل الكهربائي:</b><br>
+                    هي أقصى مقدار لمجال كهربائي يمكن أن تتحمله تلك المادة قبل حصول الانهيار الكهربائي لها (وتعد مقياساً لقابليتها في الصمود أمام المجال الكهربائي المسلط عليها).<br>
+                    <b>وحدة قياسها:</b> الفولط على المتر (<span class="math">V/m</span>).
+                </div>
+            </div>
+        </div>
+
+        <!-- السؤال الحادي عشر -->
+        <div class="card">
+            <div class="q-title">س11: تفسيرات ومسألة عازل (س4 / B)</div>
+            <div class="q-text">
+                1- ما تأثير إدخال مادة عازلة ثابت عزلها (6) بين صفيحتي متسعة ذات الصفيحتين المتوازيتين (مربوطة بين قطبي بطارية) بدلاً من الهواء في: (a- فرق الجهد بين صفيحتيها، b- سعتها)؟<br>
+                2- ما التفسير الفيزيائي لازدياد السعة المكافئة لمجموعة المتسعات المربوطة على التوازي؟<br>
+                3- متسعة ذات الصفيحتين المتوازيتين سعتها <span class="highlight">(30μF)</span> الهواء يملأ الحيز بين صفيحتيها، إذا أدخلت مادة عازلة بين صفيحتيها ازدادت سعتها بمقدار <span class="highlight">(60μF)</span>، ما ثابت عزل تلك المادة؟
+            </div>
+            <button class="btn-show" onclick="toggleAnswer('a11', this)">إظهار الحل</button>
+            <div class="answer" id="a11">
+                <div class="answer-title">الحل:</div>
+                <div class="step"><b>1- التأثير (بما أنها متصلة بالبطارية):</b><br>
+                    <b>a- فرق الجهد:</b> يبقى ثابتاً لا يتغير (<span class="math">Vk = V</span>) لأنها ما زالت متصلة بالبطارية.<br>
+                    <b>b- سعتها:</b> تزداد إلى 6 أمثال ما كانت عليه (<span class="math">Ck = 6 C</span>).
+                </div>
+                <div class="step"><b>2- التفسير الفيزيائي لربط التوازي:</b><br>
+                    إن ربط المتسعات على التوازي يعني زيادة المساحة السطحية المتقابلة لصفيحتي المتسعة المكافئة للمجموعة المتوازية، فيزداد بذلك مقدار السعة المكافئة للمجموعة (بثبوت البعد d ونوع العازل) طبقاً للعلاقة <span class="math">C = ε₀ A / d</span>.
+                </div>
+                <div class="step"><b>3- حساب ثابت العزل (k):</b><br>
+                    انتبه لعبارة <b>"ازدادت سعتها بمقدار 60μF"</b>:<br>
+                    <span class="math">Ck = C + ΔC = 30 + 60 = 90 μF</span><br>
+                    <span class="math">k = Ck / C = 90 / 30 = 3</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswer(id, btn) {
+            const el = document.getElementById(id);
+            if (el.style.display === 'block') {
+                el.style.display = 'none';
+                btn.innerText = 'إظهار الحل';
+                btn.style.background = '#1e3a8a';
+            } else {
+                el.style.display = 'block';
+                btn.innerText = 'إخفاء الحل';
+                btn.style.background = '#64748b';
+            }
+        }
+    </script>
+</body>
+</html>
